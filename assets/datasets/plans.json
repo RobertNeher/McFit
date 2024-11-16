@@ -2,92 +2,105 @@
     "Plans": [
         {
             "customer_id": "TÜ001-6876582",
-            "valid_from": "2024-10-27",
+            "valid_from": "2024-11-15",
             "machines": [
                 {
                     "machine_id": "A01",
-                    "parameter_values": [35],
-                    "repeats": 12,
-                    "comments": ""
+                    "parameter_values": [40],
+                    "sets": 4,
+                    "repeats": 8,
+                    "break": 60,
+                    "comments": "Neutrale Handgelenke\nGriffe mittig an der Brust"
                 },
                 {
                     "machine_id": "A02",
                     "parameter_values": [40],
-                    "repeats": 12,
-                    "comments": ""
+                    "sets": 3,
+                    "repeats": 8,
+                    "break": 60,
+                    "comments": "Hände auf Schulterhöhe\nEllenbogen zusammenführen"
                 },
                 {
                     "machine_id": "B01",
-                    "parameter_values": [45],
-                    "repeats": 12,
-                    "comments": ""
+                    "parameter_values": [40],
+                    "sets": 3,
+                    "repeats": 8,
+                    "break": 60,
+                    "comments": "Dehnung\nEllenbogen nah am Körper"
                 },
                 {
                     "machine_id": "B02",
                     "parameter_values": [45],
-                    "repeats": 24,
-                    "comments": ""
+                    "sets": 4,
+                    "repeats": 8,
+                    "break": 60,
+                    "comments": "Zeigefinger in den Knick\nBis zum Knick ziehen\nSSpannung in den Schultern"
+                },
+                {
+                    "machine_id": "D22",
+                    "parameter_values": [50],
+                    "sets": 3,
+                    "repeats": 10,
+                    "break": 30,
+                    "comments": "Rundrücken beim Runtergehen\nBrust raus beim Hochgehen"
+                },
+                {
+                    "machine_id": "X01",
+                    "parameter_values": [20],
+                    "sets": 3,
+                    "repeats": 12,
+                    "break": 30,
+                "comments": "\"\"Nuss knacken\"\"\nArme können auch gestreckt sein"
                 },
                 {
                     "machine_id": "D01",
-                    "parameter_values": [20],
-                    "repeats": 12,
-                    "comments": ""
-                },
-                {
-                    "machine_id": "B21",
-                    "parameter_values": [37],
-                    "repeats": 12,
-                    "comments": ""
-                },
-                {
-                    "machine_id": "C01",
                     "parameter_values": [30],
-                    "repeats": 12,
+                    "sets": 3,
+                    "repeats": 8,
+                    "break": 30,
+                    "comments": "Unterarme komplett nach vorne legen"
+                },
+                {
+                    "machine_id": "H01",
+                    "parameter_values": [80],
+                    "sets": 3,
+                    "repeats": 8,
+                    "break": 30,
+                    "comments": "Ellenbogen nah am Körper lassen\nArme bis ans Ende durchstrecken"
+                },
+                {
+                    "machine_id": "F24",
+                    "parameter_values": [35, 4, 3],
+                    "sets": 3,
+                    "repeats": 15,
+                    "break": 30,
                     "comments": ""
                 },
                 {
                     "machine_id": "D11",
                     "parameter_values": [50],
-                    "repeats": 12,
+                    "sets": 0,
+                    "repeats": 0,
+                    "break": 0,
                     "comments": ""
                 },
                 {
                     "machine_id": "F10",
                     "parameter_values": [70, 3],
-                    "repeats": 12,
-                    "comments": ""
-                },
-                {
-                    "machine_id": "F24",
-                    "parameter_values": [45, 4, 3],
-                    "repeats": 12,
+                    "sets": 0,
+                    "repeats": 0,
+                    "break": 0,
                     "comments": ""
                 },
                 {
                     "machine_id": "F23",
                     "parameter_values": [40],
-                    "repeats": 12,
-                    "comments": ""
-                }
-            ]
-        },
-        {
-            "customer_id": "TÜ001-6876582",
-            "valid_from": "2024-11-15",
-            "machines": [
-                {
-                    "machine_id": "A01",
-                    "parameter_values": [],
-                    "comments": ""
-                },
-                {
-                    "machine_id": "A02",
-                    "parameter_values": [],
+                    "sets": 0,
+                    "repeats": 0,
+                    "break": 0,
                     "comments": ""
                 }
             ]
         }
     ]
 }
-

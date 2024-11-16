@@ -54,6 +54,9 @@ class DBConnection:
                                         valid_from TEXT NOT NULL,
                                         machine_id REFERENCES {MACHINE_TABLE}(name),
                                         machine_parameters TEXT,
+                                        sets INTEGER,
+                                        repeats INTEGER,
+                                        break INTEGER,
                                         machine_comments TEXT);
                                     """)
                 connection.execute(f"""CREATE UNIQUE INDEX PLAN1 ON {PLAN_TABLE}
