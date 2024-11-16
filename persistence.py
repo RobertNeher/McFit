@@ -42,8 +42,8 @@ class DBConnection:
                 connection.execute(f"""CREATE TABLE {MACHINE_TABLE}
                                         (name PRIMARY KEY,
                                         title TEXT NOT NULL,
-                                        description TEXT,
                                         parameters TEXT,
+                                        description TEXT,
                                         image BLOB);
                                     """)
                 connection.execute(f"""CREATE UNIQUE INDEX MACHINE1 ON {MACHINE_TABLE}
@@ -103,11 +103,12 @@ class DBConnection:
         logo_file = open(f"{IMAGE_FOLDER}\\McFit-weisserHG.png", "rb")
 
         machine_init_file = os.path.join(DATASETS_FOLDER, MACHINE_TABLE + ".json")
+
         SQL = f"""INSERT INTO {MACHINE_TABLE} (
                         name,
                         title,
-                        description,
                         parameters,
+                        description,
                         image
                     )
                     VALUES (
@@ -119,16 +120,16 @@ class DBConnection:
 
             for machine in machines["Machines"]:
                 try:
-                    with open(f"{IMAGE_FOLDER}\\{machine['name'].strip(' ')}.png", "rb") as image_file:
+                    with open(f"{IMAGE_FOLDER}\\{machine['name'].strip(' ')}.jpg", "rb") as image_file:
                         blob_data = image_file.read()
-                except OSError as e:
+                except OSError:
                     blob_data = logo_file.read()
 
                 data_tuple = (
                     machine['name'],
                     machine['title'],
-                    machine['description'],
                     f"{machine['parameters']}",
+                    machine['description'],
                     blob_data
                 )
 
