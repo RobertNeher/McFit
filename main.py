@@ -1,4 +1,7 @@
-from  persistence import ASSETS_FOLDER
+from  persistence import (
+  ASSETS_FOLDER,
+  IMAGE_FOLDER
+)
 # from preferences import Preferences
 # from plan import Plan
 from trainings_plan import trainingPlan
@@ -6,12 +9,15 @@ from trainings_plan import trainingPlan
 from flet import (
     Column,
     Container,
+    Divider,
     FontWeight,
-    Icon,
+    Image,
     MainAxisAlignment,
     Page,
+    Row,
     Tabs,
     Text,
+    alignment,
     app,
     colors
 )
@@ -32,12 +38,30 @@ def main(page: Page):
         alignment=MainAxisAlignment.CENTER,
         controls=[
             Container(
-                content=Text(
-                    "Dein Trainingsplan",
-                    size=24,
-                    color=colors.BLACK,
-                    weight=FontWeight.BOLD
-                ),
+                content=Row(
+                    alignment=MainAxisAlignment.SPACE_BETWEEN,
+                    controls=[
+                        Image(
+                            src=f"{IMAGE_FOLDER}\\McFit-weisserHG-hochkant.png",
+                            height=50
+                        ),
+                        Container(
+                            height=75,
+                            content=Text(
+                                "Mein Trainingsplan",
+                                size=24,
+                                color=colors.BLACK,
+                                weight=FontWeight.BOLD
+                            ),
+                            alignment=alignment.center,
+                            expand=1
+                        ),
+                    ]
+                )
+            ),
+            Divider(
+                height=5,
+                color=colors.AMBER_400
             ),
             stationTabs
         ],

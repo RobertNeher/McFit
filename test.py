@@ -1,30 +1,22 @@
-import flet as ft
+import sys
+ASSETS_FOLDER = ".\\assets"
+DATASETS_FOLDER = ASSETS_FOLDER + "\\datasets"
+DB_FILE = ASSETS_FOLDER + "\\McFit.db"
+IMAGE_FOLDER = ASSETS_FOLDER + "\\images"
 
-def main(page: ft.Page):
+def main(imageName):
+    logo_file = open(f"{IMAGE_FOLDER}\\McFit-weisserHG.png", "rb")
 
-    t = ft.Tabs(
-        selected_index=1,
-        animation_duration=300,
-        tabs=[
-            ft.Tab(
-                text="Tab 1",
-                content=ft.Container(
-                    content=ft.Text("This is Tab 1"), alignment=ft.alignment.center
-                ),
-            ),
-            ft.Tab(
-                tab_content=ft.Icon(ft.icons.SEARCH),
-                content=ft.Text("This is Tab 2"),
-            ),
-            ft.Tab(
-                text="Tab 3",
-                icon=ft.icons.SETTINGS,
-                content=ft.Text("This is Tab 3"),
-            ),
-        ],
-        expand=1,
-    )
+    try:
+        with open(f"{IMAGE_FOLDER}\\{imageName}.jpg", "rb") as image_file:
+            print("image")
+            blob_data = image_file.read()
+    except OSError:
+        print("logo")
+        blob_data = logo_file.read()
 
-    page.add(t)
+    print(blob_data.count)
 
-ft.app(main)
+#------------------------ MAIN ------------------------#
+if __name__ == "__main__":
+    main(sys.argv[1])

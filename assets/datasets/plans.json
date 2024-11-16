@@ -34,7 +34,7 @@
                     "sets": 4,
                     "repeats": 8,
                     "break": 60,
-                    "comments": "Zeigefinger in den Knick\nBis zum Knick ziehen\nSSpannung in den Schultern"
+                    "comments": "Zeigefinger in den Knick\nBis zum Knick ziehen\nSpannung in den Schultern"
                 },
                 {
                     "machine_id": "D22",
@@ -50,7 +50,7 @@
                     "sets": 3,
                     "repeats": 12,
                     "break": 30,
-                "comments": "\"\"Nuss knacken\"\"\nArme können auch gestreckt sein"
+                    "comments": "\"\"Nuss knacken\"\"\nArme können auch gestreckt sein"
                 },
                 {
                     "machine_id": "D01",
