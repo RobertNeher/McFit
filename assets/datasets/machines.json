@@ -1,0 +1,58 @@
+{
+  "Machines": [
+    {
+      "name": "A01",
+      "title": "Brustpresse",
+      "parameters": ["Gewicht"],
+      "description": ""
+    },
+    {
+      "name": "A02",
+      "title": "Butterfly",
+      "parameters": ["Gewicht"],
+      "description": ""
+    },
+    {
+      "name": "B01",
+      "title": "Ruderzug",
+      "parameters": ["Gewicht"],
+      "description": ""
+    },
+    {
+      "name": "B02",
+      "title": "Lastzug",
+      "parameters": ["Gewicht"],
+      "description": "Eine Übung: Hälfte vorn herunterziehen, eine Hälfte hinten herunterziehen."
+    },
+    {
+      "name": "C01",
+      "title": "Butterfly Reverse",
+      "parameters": ["Gewicht"],
+      "description": ""
+    },
+    {
+      "name": "F10",
+      "title": "Bauch",
+      "parameters": ["Gewicht", "Fussrolle"],
+      "description": ""
+    },
+    {
+      "name": "B22",
+      "title": "Rückenstrecker",
+      "parameters": ["Gewicht", "Brustrolle"],
+      "description": ""
+    },
+    {
+      "name": "F24",
+      "title": "Bauchpresse",
+      "parameters": ["Gewicht", "Brustrolle", "Fussstütze"],
+      "description": ""
+    },
+    {
+      "name": "F23",
+      "title": "Twister",
+      "parameters": ["Gewicht"],
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+    "Plans": [
+        {
+            "customer_id": "TÜ001-6876582",
+            "valid_from": "2024-10-27",
+            "machines": [
+                {
+                    "machine_id": "A01",
+                    "parameter_values": [35],
+                    "repeats": 12,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "A02",
+                    "parameter_values": [40],
+                    "repeats": 12,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "B01",
+                    "parameter_values": [45],
+                    "repeats": 12,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "B02",
+                    "parameter_values": [45],
+                    "repeats": 24,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "D01",
+                    "parameter_values": [20],
+                    "repeats": 12,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "B21",
+                    "parameter_values": [37],
+                    "repeats": 12,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "C01",
+                    "parameter_values": [30],
+                    "repeats": 12,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "D11",
+                    "parameter_values": [50],
+                    "repeats": 12,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "F10",
+                    "parameter_values": [70, 3],
+                    "repeats": 12,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "F24",
+                    "parameter_values": [45, 4, 3],
+                    "repeats": 12,
+                    "comments": ""
+                },
+                {
+                    "machine_id": "F23",
+                    "parameter_values": [40],
+                    "repeats": 12,
+                    "comments": ""
+                }
+            ]
+        },
+        {
+            "customer_id": "TÜ001-6876582",
+            "valid_from": "2024-11-15",
+            "machines": [
+                {
+                    "machine_id": "A01",
+                    "parameter_values": [],
+                    "comments": ""
+                },
+                {
+                    "machine_id": "A02",
+                    "parameter_values": [],
+                    "comments": ""
+                }
+            ]
+        }
+    ]
+}
+
