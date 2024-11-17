@@ -1,6 +1,6 @@
 from  persistence import (
-  ASSETS_FOLDER,
-  IMAGE_FOLDER
+    ASSETS_FOLDER,
+    IMAGE_FOLDER
 )
 # from preferences import Preferences
 # from plan import Plan
@@ -17,8 +17,8 @@ from flet import (
     Row,
     Tabs,
     Text,
-    alignment,
     app,
+    alignment,
     colors
 )
 
@@ -29,44 +29,45 @@ def main(page: Page):
 
     stationTabs = Tabs(
         selected_index=0,
+        divider_color=colors.AMBER_400,
         animation_duration=300,
-        tabs=trainingPlan(validFrom="2024-10-27"),
+        tabs=trainingPlan(validFrom="2024-11-15"),
     )
 
     page.window.width=500
-    page.add(Column(
-        alignment=MainAxisAlignment.CENTER,
-        controls=[
-            Container(
-                content=Row(
-                    alignment=MainAxisAlignment.SPACE_BETWEEN,
+    page.add(
+        Column(
+            alignment=MainAxisAlignment.CENTER,
+            controls=[
+                Row(
+                    alignment=MainAxisAlignment.CENTER,
                     controls=[
                         Image(
                             src=f"{IMAGE_FOLDER}\\McFit-weisserHG-hochkant.png",
-                            height=50
+                            height=75
                         ),
                         Container(
+                            width=350,
                             height=75,
                             content=Text(
-                                "Mein Trainingsplan",
+                                "Trainingsplan",
                                 size=24,
                                 color=colors.BLACK,
                                 weight=FontWeight.BOLD
                             ),
                             alignment=alignment.center,
-                            expand=1
-                        ),
+                        )
                     ]
-                )
-            ),
-            Divider(
-                height=5,
-                color=colors.AMBER_400
-            ),
-            stationTabs
-        ],
-        expand=1
-    ))
+                ),
+                Divider(
+                    height=5,
+                    color=colors.AMBER_400
+                ),
+                stationTabs
+            ],
+            expand=1
+        )
+    )
     page.update()
 
 
