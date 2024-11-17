@@ -1,5 +1,7 @@
-from persistence import MACHINE_TABLE
-from persistence import DBConnection
+from persistence import (
+    MACHINE_TABLE,
+    DBConnection
+)
 
 class Machine:
     def __init__(self, machineID = None):
@@ -26,4 +28,7 @@ class Machine:
 #-------------------------- TEST -------------------------#
 if __name__ == "__main__":
     m = Machine("X02")
-    print(m.machines["parameters"])
+    list = []
+    for param in m.machines["parameters"]:
+        list.append(param)
+    print(list)
