@@ -2,8 +2,7 @@ import os
 import json
 import sqlite3 as sl
 
-from get_machine_parameters import (
-    getMachineParameters,
+from helpers import (
     getMachineParameterValues
 )
 

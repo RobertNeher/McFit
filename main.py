@@ -32,6 +32,7 @@ def main(page: Page):
         divider_color=colors.AMBER_400,
         animation_duration=300,
         tabs=trainingPlan(validFrom="2024-11-15"),
+        expand=1
     )
 
     page.window.width=500
