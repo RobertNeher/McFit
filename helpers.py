@@ -29,5 +29,8 @@ def getMachineParameterValues(machines: dict, machineID: str) -> str:
 
     return None
 
+def splitString2List(data:str) -> list:
+    return data.strip('[\'\"]').split(',')
+
 if __name__ == '__main__':
     print(getMachineParameters(machineID=sys.argv[1]))
