@@ -112,11 +112,10 @@ class DBConnection:
                         blob_data = image_file.read()
                 except OSError:
                     blob_data = logo_file.read()
-
                 data_tuple = (
                     machine['name'],
                     machine['title'],
-                    f"{machine['parameters']}",
+                    str(machine['parameters']),
                     machine['description'],
                     blob_data
                 )

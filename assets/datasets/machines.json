@@ -25,6 +25,12 @@
       "description": ""
     },
     {
+      "name": "B22",
+      "title": "Rückenstrecker",
+      "parameters": ["Gewicht", "Brustrolle"],
+      "description": ""
+    },
+    {
       "name": "C01",
       "title": "Butterfly Reverse",
       "parameters": ["Gewicht"],
@@ -33,6 +39,12 @@
     {
       "name": "D01",
       "title": "Bizeps",
+      "parameters": ["Gewicht"],
+      "description": ""
+    },
+    {
+      "name": "D11",
+      "title": "Trizeps",
       "parameters": ["Gewicht"],
       "description": ""
     },
@@ -46,12 +58,6 @@
       "name": "F10",
       "title": "Bauch",
       "parameters": ["Gewicht", "Fussrolle"],
-      "description": ""
-    },
-    {
-      "name": "B22",
-      "title": "Rückenstrecker",
-      "parameters": ["Gewicht", "Brustrolle"],
       "description": ""
     },
     {

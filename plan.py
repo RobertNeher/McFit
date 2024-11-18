@@ -1,9 +1,9 @@
+import sys
+
 from persistence import PLAN_TABLE
 from persistence import DBConnection
 from preferences import Preferences
 from machine import Machine
-from datetime import datetime
-
 class Plan:
     def __init__(self, customerID:str, validFrom:str = None, machineID:str = None):
         self.customerID = customerID
@@ -12,15 +12,18 @@ class Plan:
         self.connection = DBConnection(initialize=False)
         self.cursor = self.connection.cursor
 
-        SQL = f"SELECT * FROM {PLAN_TABLE} WHERE customer_id = ?"
+        SQL = f"SELECT * FROM {PLAN_TABLE} WHERE customer_id = \"{self.customerID}\""
 
-        if validFrom == None:
-            SQL += "ORDER BY valid_from DESC, machine_id ASC"
+        if self.machineID != None:
+            SQL += f" AND machine_id = \"{self.machineID}\""
 
-            self.cursor.execute(SQL, [self.customerID])
+        if self.validFrom == None:
+            SQL += " ORDER BY valid_from DESC, machine_id ASC"
+            print(SQL)
+            self.cursor.execute(SQL)
         else:
-            SQL += "AND valid_from >= ? ORDER BY valid_from DESC"
-            self.cursor.execute(SQL, [self.customerID, self.validFrom])
+            SQL += f" AND valid_from >= {validFrom} ORDER BY valid_from DESC"
+            self.cursor.execute(SQL)
 
         self.plans = [dict((self.cursor.description[i][0], value) \
             for i, value in enumerate(row)) for row in self.cursor.fetchall()]
@@ -36,9 +39,18 @@ class Plan:
 
         return dates
 
+def main(argv):
+    prefs = Preferences()
+    p = Plan(customerID=prefs.customerID, validFrom="2024-11-15") #, machineID=sys.argv[1])
+    m = Machine()
+    a = []
+    b = []
+    for plan in p.plans:
+        a.append(plan["machine_id"] + "p")
+    for machine in m.machines:
+        a.append(machine["name"] + "m")
+    a.sort()
+    print(a)
 #-------------------------- TEST -------------------------#
 if __name__ == "__main__":
-    prefs = Preferences()
-    # today = datetime.today().strftime("%Y-%m-%d")
-    p = Plan(customerID=prefs.customerID, validFrom="2024-10-27")
-    print(p.plans)
+    main(sys.argv)

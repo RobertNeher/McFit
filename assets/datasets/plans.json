@@ -45,28 +45,12 @@
                     "comments": "Unterarme komplett nach vorne legen"
                 },
                 {
-                    "machine_id": "D11",
-                    "parameter_values": [50],
-                    "sets": 0,
-                    "repeats": 0,
-                    "break": 0,
-                    "comments": ""
-                },
-                {
                     "machine_id": "D22",
                     "parameter_values": [50],
                     "sets": 3,
                     "repeats": 10,
                     "break": 30,
                     "comments": "Rundrücken beim Runtergehen\nBrust raus beim Hochgehen"
-                },
-                {
-                    "machine_id": "F23",
-                    "parameter_values": [40],
-                    "sets": 0,
-                    "repeats": 0,
-                    "break": 0,
-                    "comments": ""
                 },
                 {
                     "machine_id": "F24",

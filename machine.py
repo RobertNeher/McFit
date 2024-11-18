@@ -18,7 +18,6 @@ class Machine:
             self.machines = {}
             for index, col in enumerate(self.cursor.description):
                 self.machines[col[0]] = list(row)[index]
-
         else:
             SQL = f"""SELECT * FROM {MACHINE_TABLE}"""
             self.cursor.execute(SQL)
@@ -27,8 +26,8 @@ class Machine:
 
 #-------------------------- TEST -------------------------#
 if __name__ == "__main__":
-    m = Machine("X02")
-    list = []
+    m = Machine("X00")
+    _list = []
     for param in m.machines["parameters"]:
-        list.append(param)
-    print(list)
+        _list.append(param)
+    print(_list)
