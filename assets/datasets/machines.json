@@ -67,15 +67,21 @@
       "description": ""
     },
     {
-      "name": "X02",
-      "title": "Rotation",
-      "parameters": ["Gewicht", "Linksauslenkung", "Rechtsauslenkung", "Beine", "Rücken"],
-      "description": ""
-    },
-    {
       "name": "H01",
       "title": "Trizeps am Kabelzug",
       "parameters": ["Gewicht"],
+      "description": ""
+    },
+    {
+      "name": "X01",
+      "title": "Haltungsstabilisator",
+      "parameters": ["Gewicht"],
+      "description": ""
+    },
+    {
+      "name": "X02",
+      "title": "Rotation",
+      "parameters": ["Gewicht", "Linksauslenkung", "Rechtsauslenkung", "Beine", "Rücken"],
       "description": ""
     }
   ]

@@ -74,7 +74,15 @@
                     "sets": 3,
                     "repeats": 12,
                     "break": 30,
-                    "comments": "\"\"Nuss knacken\"\"\nArme können auch gestreckt sein"
+                    "comments": "\"Nuss knacken\"\nArme können auch gestreckt sein"
+                },
+                {
+                    "machine_id": "X02",
+                    "parameter_values": [35, 5, 5, 3],
+                    "sets": 3,
+                    "repeats": 15,
+                    "break": 30,
+                    "comments": ""
                 }
             ]
         }
