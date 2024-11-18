@@ -1,8 +1,11 @@
 import os
 import json
 import sqlite3 as sl
-from datetime import datetime
-from PIL import Image
+
+from get_machine_parameters import (
+    getMachineParameters,
+    getMachineParameterValues
+)
 
 ASSETS_FOLDER = ".\\assets"
 DATASETS_FOLDER = ASSETS_FOLDER + "\\datasets"
@@ -13,9 +16,7 @@ PREFERENCE_TABLE = "preferences"
 SETTING_TABLE = "settings"
 CUSTOMER_TABLE = "customers"
 MACHINE_TABLE = "machines"
-# TRAINING_TABLE = "trainings"
 PLAN_TABLE = "plans"
-RESULT_TABLE = "results"
 
 class DBConnection:
     def __init__(self, initialize: bool):
@@ -50,14 +51,14 @@ class DBConnection:
                                         (customer_id REFERENCES {CUSTOMER_TABLE}(customer_id),
                                         valid_from TEXT NOT NULL,
                                         machine_id REFERENCES {MACHINE_TABLE}(name),
-                                        parameters TEXT,
                                         sets INTEGER,
                                         repeats INTEGER,
                                         break INTEGER,
+                                        parameters TEXT,
                                         comments TEXT);
                                     """)
                 connection.execute(f"""CREATE UNIQUE INDEX PLAN1 ON {PLAN_TABLE}
-                                        (customer_id, valid_from DESC, machine_id);""")
+                                        (customer_id, valid_from DESC, machine_id ASC);""")
 
                 connection.commit()
 
@@ -132,28 +133,28 @@ class DBConnection:
 
             for plan in plans["Plans"]:
                 for machine in plan["machines"]:
-                    self.connection.execute(f"""INSERT INTO {PLAN_TABLE} (
+                    # self.connection.execute(f"""INSERT INTO {PLAN_TABLE} (
+                    SQL = f"""INSERT INTO {PLAN_TABLE} (
                                                 customer_id,
                                                 valid_from,
                                                 machine_id,
-                                                parameters,
                                                 sets,
                                                 repeats,
                                                 break,
+                                                parameters,
                                                 comments
                                             )
-                                            VALUES (
-                                                "{plan['customer_id']}",
-                                                "{plan['valid_from']}",
-                                                "{machine['machine_id']}",
-                                                "{machine['parameter_values']}",
-                                                "{machine['sets']}",
-                                                "{machine['repeats']}",
-                                                "{machine['break']}",
-                                                "{machine['comments']}"
-                                            )""")
-
-            self.connection.commit()
+                                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)"""
+                    self.cursor.execute(SQL, [plan['customer_id'],
+                                              plan['valid_from'],
+                                              machine['machine_id'],
+                                              machine['sets'],
+                                              machine['repeats'],
+                                              machine['break'],
+                                              str(getMachineParameterValues(plan['machines'], machine['machine_id'])),
+                                              machine['comments']
+                    ])
+                    self.connection.commit()
 
     def __del__(self):
         self.connection.close()
