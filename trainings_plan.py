@@ -4,19 +4,18 @@ from preferences import Preferences
 from helpers import splitString2List
 from flet import (
     Column,
-    Container,
+    CrossAxisAlignment,
     DataCell,
     DataColumn,
     DataTable,
     DataRow,
     Divider,
     FontWeight,
-    Icon,
     MainAxisAlignment,
+    Row,
     Tab,
     TextStyle,
     Text,
-    alignment,
     colors,
 )
 
@@ -133,15 +132,23 @@ def trainingPlan(validFrom: str) -> list:
                             weight=FontWeight.BOLD
                         )
                     ),
-                    # icon=Icon(
-                    #     "icons/gymMachine.png",
-                    #     size=10,
-                    #     semantics_label=f"Gym Machine: {station["machine_id"]}"
-                    # ),
                     content=Column(
                         alignment=MainAxisAlignment.START,
                         controls=[
-                            Text(station["comments"]),
+                            Row(
+                                controls=[
+                                    Text(
+                                        "Hinweis",
+                                        style=TextStyle(
+                                            weight=FontWeight.BOLD,
+                                            size=14
+                                        )
+                                    ),
+                                    Text(station["comments"]),
+                                ],
+                                alignment=MainAxisAlignment.CENTER,
+                                vertical_alignment=CrossAxisAlignment.START,
+                            ),
                             Divider(
                                 height=15,
                                 color=colors.BLUE_500

@@ -5,7 +5,8 @@ This will be your companion for training. Showing your machines, its parameters 
 # Prerequisites
 
 Python runtime 3.13
-flet 0.24
+flet 0.24.1
+sqlite3
 
 # Start
 

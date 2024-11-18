@@ -16,6 +16,7 @@ SETTING_TABLE = "settings"
 CUSTOMER_TABLE = "customers"
 MACHINE_TABLE = "machines"
 PLAN_TABLE = "plans"
+TRAINING_TABLE = "trainings"
 
 class DBConnection:
     def __init__(self, initialize: bool):
@@ -29,6 +30,8 @@ class DBConnection:
                 connection.execute(f"""DROP TABLE IF EXISTS {MACHINE_TABLE}
                                         """)
                 connection.execute(f"""DROP TABLE IF EXISTS {PLAN_TABLE}
+                                        """)
+                connection.execute(f"""DROP TABLE IF EXISTS {TRAINING_TABLE}
                                         """)
                 connection.execute(f"""CREATE TABLE {PREFERENCE_TABLE} (
                                         customer_id REFERENCES {CUSTOMER_TABLE} (customer_id),
@@ -58,6 +61,12 @@ class DBConnection:
                                     """)
                 connection.execute(f"""CREATE UNIQUE INDEX PLAN1 ON {PLAN_TABLE}
                                         (customer_id, valid_from DESC, machine_id ASC);""")
+                connection.execute(f"""CREATE TABLE {TRAINING_TABLE}
+                                        (studio TEXT NOT NULL,
+                                        date TEXT NOT NULL);
+                                    """)
+                connection.execute(f"""CREATE UNIQUE INDEX TRAIING1 ON {TRAINING_TABLE}
+                                        (studio, date);""")
 
                 connection.commit()
 
@@ -131,7 +140,6 @@ class DBConnection:
 
             for plan in plans["Plans"]:
                 for machine in plan["machines"]:
-                    # self.connection.execute(f"""INSERT INTO {PLAN_TABLE} (
                     SQL = f"""INSERT INTO {PLAN_TABLE} (
                                                 customer_id,
                                                 valid_from,
